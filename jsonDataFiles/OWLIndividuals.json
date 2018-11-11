@@ -1,1 +1,470 @@
-[]
+[
+  {
+    "subject": "way76246393",
+    "subjectURI": "http://linkedgeodata.org/triplify/way76246393",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way238448838",
+    "subjectURI": "http://linkedgeodata.org/triplify/way238448838",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way241095295",
+    "subjectURI": "http://linkedgeodata.org/triplify/way241095295",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way250925841",
+    "subjectURI": "http://linkedgeodata.org/triplify/way250925841",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way66240632",
+    "subjectURI": "http://linkedgeodata.org/triplify/way66240632",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way241095299",
+    "subjectURI": "http://linkedgeodata.org/triplify/way241095299",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way37235833",
+    "subjectURI": "http://linkedgeodata.org/triplify/way37235833",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way32754334",
+    "subjectURI": "http://linkedgeodata.org/triplify/way32754334",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node82689845",
+    "subjectURI": "http://linkedgeodata.org/triplify/node82689845",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node82689506",
+    "subjectURI": "http://linkedgeodata.org/triplify/node82689506",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node2626943480",
+    "subjectURI": "http://linkedgeodata.org/triplify/node2626943480",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node2850750837",
+    "subjectURI": "http://linkedgeodata.org/triplify/node2850750837",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node472272096",
+    "subjectURI": "http://linkedgeodata.org/triplify/node472272096",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way92105974",
+    "subjectURI": "http://linkedgeodata.org/triplify/way92105974",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way33188875",
+    "subjectURI": "http://linkedgeodata.org/triplify/way33188875",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way239285012",
+    "subjectURI": "http://linkedgeodata.org/triplify/way239285012",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node59960302",
+    "subjectURI": "http://linkedgeodata.org/triplify/node59960302",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node732716479",
+    "subjectURI": "http://linkedgeodata.org/triplify/node732716479",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way142277010",
+    "subjectURI": "http://linkedgeodata.org/triplify/way142277010",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node279358486",
+    "subjectURI": "http://linkedgeodata.org/triplify/node279358486",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node2774668368",
+    "subjectURI": "http://linkedgeodata.org/triplify/node2774668368",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way237649227",
+    "subjectURI": "http://linkedgeodata.org/triplify/way237649227",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way237392591",
+    "subjectURI": "http://linkedgeodata.org/triplify/way237392591",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way33504189",
+    "subjectURI": "http://linkedgeodata.org/triplify/way33504189",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node2774941417",
+    "subjectURI": "http://linkedgeodata.org/triplify/node2774941417",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way33627293",
+    "subjectURI": "http://linkedgeodata.org/triplify/way33627293",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way264317062",
+    "subjectURI": "http://linkedgeodata.org/triplify/way264317062",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way32756103",
+    "subjectURI": "http://linkedgeodata.org/triplify/way32756103",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way239285011",
+    "subjectURI": "http://linkedgeodata.org/triplify/way239285011",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way38424460",
+    "subjectURI": "http://linkedgeodata.org/triplify/way38424460",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way31075269",
+    "subjectURI": "http://linkedgeodata.org/triplify/way31075269",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way66240634",
+    "subjectURI": "http://linkedgeodata.org/triplify/way66240634",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way32964549",
+    "subjectURI": "http://linkedgeodata.org/triplify/way32964549",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node269064972",
+    "subjectURI": "http://linkedgeodata.org/triplify/node269064972",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way237681280",
+    "subjectURI": "http://linkedgeodata.org/triplify/way237681280",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way111326952",
+    "subjectURI": "http://linkedgeodata.org/triplify/way111326952",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node732716518",
+    "subjectURI": "http://linkedgeodata.org/triplify/node732716518",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way28203562",
+    "subjectURI": "http://linkedgeodata.org/triplify/way28203562",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way239285008",
+    "subjectURI": "http://linkedgeodata.org/triplify/way239285008",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node203098644",
+    "subjectURI": "http://linkedgeodata.org/triplify/node203098644",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node303755216",
+    "subjectURI": "http://linkedgeodata.org/triplify/node303755216",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way85207845",
+    "subjectURI": "http://linkedgeodata.org/triplify/way85207845",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node26023847",
+    "subjectURI": "http://linkedgeodata.org/triplify/node26023847",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way239966956",
+    "subjectURI": "http://linkedgeodata.org/triplify/way239966956",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node2850776898",
+    "subjectURI": "http://linkedgeodata.org/triplify/node2850776898",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node382035509",
+    "subjectURI": "http://linkedgeodata.org/triplify/node382035509",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way265421491",
+    "subjectURI": "http://linkedgeodata.org/triplify/way265421491",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "node238080786",
+    "subjectURI": "http://linkedgeodata.org/triplify/node238080786",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way107959624",
+    "subjectURI": "http://linkedgeodata.org/triplify/way107959624",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "way102157726",
+    "subjectURI": "http://linkedgeodata.org/triplify/way102157726",
+    "RDFType": "FuelStation",
+    "fileName": "ExampleFuelStationIndv.ttl"
+  },
+  {
+    "subject": "r22455842",
+    "subjectURI": "http://lod.dbc.dk/id/870970/resource/r22455842",
+    "RDFType": "BibliographicResource",
+    "fileName": "skos1.ttl"
+  },
+  {
+    "subject": "r22455842",
+    "subjectURI": "http://lod.dbc.dk/id/870970/resource/r22455842",
+    "RDFType": "Book",
+    "fileName": "skos1.ttl"
+  },
+  {
+    "subject": "15_2",
+    "subjectURI": "http://lod.dbc.dk/id/dk5/15_2",
+    "RDFType": "TopicDK5",
+    "fileName": "skos1.ttl"
+  },
+  {
+    "subject": "pA2067402x",
+    "subjectURI": "http://lod.dbc.dk/id/870979/people/pA2067402x",
+    "RDFType": "foaf:0.1Agent",
+    "fileName": "skos1.ttl"
+  },
+  {
+    "subject": "Borgen",
+    "subjectURI": "http://lod.dbc.dk/id/agent/Borgen",
+    "RDFType": "foaf:0.1Agent",
+    "fileName": "skos1.ttl"
+  },
+  {
+    "subject": "pA2067402x",
+    "subjectURI": "http://lod.dbc.dk/id/870979/people/pA2067402x",
+    "RDFType": "Agent",
+    "fileName": "skos1.ttl"
+  },
+  {
+    "subject": "Borgen",
+    "subjectURI": "http://lod.dbc.dk/id/agent/Borgen",
+    "RDFType": "Agent",
+    "fileName": "skos1.ttl"
+  },
+  {
+    "subject": "Valby",
+    "subjectURI": "http://lod.dbc.dk/id/place/Valby",
+    "RDFType": "SpatialThing",
+    "fileName": "skos1.ttl"
+  },
+  {
+    "subject": "pA2067402x",
+    "subjectURI": "http://lod.dbc.dk/id/870979/people/pA2067402x",
+    "RDFType": "foaf:0.1Person",
+    "fileName": "skos1.ttl"
+  },
+  {
+    "subject": "FuelStationA",
+    "subjectURI": "http://eccenca.com/mobivoc/FuelStationA",
+    "RDFType": "FuelStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "FuelStationB",
+    "subjectURI": "http://eccenca.com/mobivoc/FuelStationB",
+    "RDFType": "FuelStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "FuelStationC",
+    "subjectURI": "http://eccenca.com/mobivoc/FuelStationC",
+    "RDFType": "FuelStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "FuelStationD",
+    "subjectURI": "http://eccenca.com/mobivoc/FuelStationD",
+    "RDFType": "FuelStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "ChargingStationA",
+    "subjectURI": "http://eccenca.com/mobivoc/ChargingStationA",
+    "RDFType": "ChargingStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "ChargingStationB",
+    "subjectURI": "http://eccenca.com/mobivoc/ChargingStationB",
+    "RDFType": "ChargingStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "ChargingStationC",
+    "subjectURI": "http://eccenca.com/mobivoc/ChargingStationC",
+    "RDFType": "ChargingStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "ChargingStationD",
+    "subjectURI": "http://eccenca.com/mobivoc/ChargingStationD",
+    "RDFType": "ChargingStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "ChargingStationE",
+    "subjectURI": "http://eccenca.com/mobivoc/ChargingStationE",
+    "RDFType": "ChargingStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "ChargingStationF",
+    "subjectURI": "http://eccenca.com/mobivoc/ChargingStationF",
+    "RDFType": "ChargingStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "ChargingStationG",
+    "subjectURI": "http://eccenca.com/mobivoc/ChargingStationG",
+    "RDFType": "ChargingStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "ChargingStationH",
+    "subjectURI": "http://eccenca.com/mobivoc/ChargingStationH",
+    "RDFType": "ChargingStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "ChargingStationI",
+    "subjectURI": "http://eccenca.com/mobivoc/ChargingStationI",
+    "RDFType": "ChargingStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "ChargingStationK",
+    "subjectURI": "http://eccenca.com/mobivoc/ChargingStationK",
+    "RDFType": "ChargingStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "ChargingStationL",
+    "subjectURI": "http://eccenca.com/mobivoc/ChargingStationL",
+    "RDFType": "ChargingStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "ChargingStationM",
+    "subjectURI": "http://eccenca.com/mobivoc/ChargingStationM",
+    "RDFType": "ChargingStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "ChargingStationN",
+    "subjectURI": "http://eccenca.com/mobivoc/ChargingStationN",
+    "RDFType": "ChargingStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "ChargingStationO",
+    "subjectURI": "http://eccenca.com/mobivoc/ChargingStationO",
+    "RDFType": "ChargingStation",
+    "fileName": "FillingStation.ttl"
+  },
+  {
+    "subject": "ChargingStationP",
+    "subjectURI": "http://eccenca.com/mobivoc/ChargingStationP",
+    "RDFType": "ChargingStation",
+    "fileName": "FillingStation.ttl"
+  }
+]

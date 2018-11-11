@@ -1,25 +1,53 @@
-<% include header %>
-  <div class="ui grid">
-    <div class="ui container">
-      <iframe id="myframe" src="./fuseki/dataset.html?tab=query&ds=/dataset" frameborder="0" scrolling="auto" style="position: absolute; width:100% ; top:-190px ;right: 0px; left: 0px"></iframe>
-    </div>
+<% include header.ejs %>
+<!-- <link href='//cdn.jsdelivr.net/yasgui/2.5.0/yasgui.min.css' rel='stylesheet' type='text/css'/> -->
+<link rel="stylesheet" href="./javascripts/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="./javascripts/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
+<link rel="stylesheet" href="./stylesheets/bootstrap-treeview.min.css">
+<link rel="stylesheet" type="text/css" href="./stylesheets/dataTables.min.css">
+<link rel="stylesheet" href="./semantic/dist/semantic.min.css">
+<link rel="stylesheet" href="./stylesheets/style.css">
+<!-- <link rel="stylesheet" type="text/css" href="./stylesheets/yasqe.min.css"> -->
+<link href="./stylesheets/yasqe2.css" rel="stylesheet" type="text/css" />
 
+<link href="./stylesheets/mTab-style.css" type="text/css" rel="stylesheet" />
+<script src="dist/vis.min.js"></script>
+<script src="./javascripts/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="./javascripts/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<div style="margin-top: 3% !important;"></div>
+<div class="ui grid">
+  <div class="ui container">
+    <div class="col-md-12">
+      <h1>SPARQL Query</h1>
+      <div id="showcase"></div>
+    </div>
+    <!-- <iframe id="myframe" src="./fuseki/dataset.html?tab=query&ds=/dataset" frameborder="0" scrolling="auto" style="position: absolute; width:100% ; top:-190px ;right: 0px; left: 0px"></iframe> -->
   </div>
-  <% include footer %>
-    <script>
-      $('#myframe').on('load', function() {
-        resizeIframe(this);
-        var iframe = $('#myframe').contents();
-          iframe.find("#results-block").change(function(){
-         });
-      });
-      function resizeIframe(obj) {
-        // Initially just set the height to 100% till the inner page loads and once the page inside the iframe is loaded
-        // then set the iframe height to match that page height so that it looks seamless to the user
-        obj.style.height = "100vH";
-        setTimeout(function() {
-          obj.style.display = "block";
-          obj.style.height = $(obj.contentWindow.document.body).height() + "px";
-        }, 1500);
-      }
-    </script>
+</div>
+<script src=''></script>
+<script src='./javascripts/yasqe2.js'></script>
+<script>
+  var config = {
+    "api": {
+      "urlShortener": "/shorten"
+    },
+    "endpoint": "http://localhost:3030/dataset/sparql"
+  };
+  var yasqe = YASGUI(document.getElementById("showcase"), config);
+
+
+  // $('#myframe').on('load', function() {
+  //   resizeIframe(this);
+  //   var iframe = $('#myframe').contents();
+  //   iframe.find("#results-block").change(function() {});
+  // });
+  //
+  // function resizeIframe(obj) {
+  //   // Initially just set the height to 100% till the inner page loads and once the page inside the iframe is loaded
+  //   // then set the iframe height to match that page height so that it looks seamless to the user
+  //   obj.style.height = "100vH";
+  //   setTimeout(function() {
+  //     obj.style.display = "block";
+  //     obj.style.height = $(obj.contentWindow.document.body).height() + "px";
+  //   }, 2500);
+  // }
+</script>

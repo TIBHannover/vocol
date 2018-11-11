@@ -14,6 +14,7 @@ var adminLogin = require('./routes/adminLogin');
 var referenceRoutes = require('./routes/referenceRoutes');
 var listener = require('./routes/listener');
 var config = require('./routes/config');
+var converter = require('./routes/converter');
 var fs = require('fs');
 var jsonfile = require('jsonfile');
 var app = express();
@@ -207,6 +208,7 @@ app.use(['\/\/startup', '/startup'], startup);
 app.use(['\/\/validation', '/validation'], validation);
 app.use(['\/\/client', '/client'], client);
 app.use(['\/\/listener', '/listener'], listener);
+app.use(['\/\/converter', '/converter'], converter);
 app.use(['\/\/login', '/login'], login);
 app.use(['\/\/adminLogin', '/adminLogin'], adminLogin);
 app.use(['\/\/config', '/config'], config);
@@ -370,4 +372,3 @@ app.use(function(err, req, res, next) {
 
 
 module.exports = app;
-
