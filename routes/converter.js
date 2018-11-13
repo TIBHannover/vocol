@@ -281,7 +281,6 @@ function generateRDFObjects(fromInQuery, result) {
     jsonfile.writeFileSync(file, JSONRDFObjectArrary, {
       spaces: 2
     })
-
   } else
     execQuery(RDFSObjectsQuery(fromInQuery), "RDFObjects");
 }
@@ -313,6 +312,9 @@ function generateIndividuals(fromInQuery, result) {
 
 
 router.get('/', function(req, res) {
+
+
+
   // query to fuseki to getAllNamedGraphs
   request.get({
     headers: {
@@ -361,6 +363,7 @@ router.get('/', function(req, res) {
       return null;
     }
   });
+
 
 }); // end of router.get
 

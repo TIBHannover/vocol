@@ -56,68 +56,100 @@
             <li id="homeLi"><a href="./">Home</a></li>
 
             <% if (userConfigurations[0] ) {%>
-              <li id="editingLi"><a href="./editor">Editing</a></li>
-              <% } %>
-                <% if ( userConfigurations[1] ) {%>
-                  <li id="documentationLi"><a href="./documentation">Documentation</a></li>
-                  <% } %>
-                    <% if (userConfigurations[2]){ %>
-                      <li id="visualizationLi"><a href="./visualization">Visualization</a></li>
+            <li id="editingLi"><a href="./editor">Editing</a></li>
+            <% } %>
+            <% if ( userConfigurations[1] ) {%>
+            <li id="documentationLi"><a href="./documentation">Documentation</a></li>
+            <% } %>
+            <% if (userConfigurations[2]){ %>
+            <li id="visualizationLi"><a href="./visualization">Visualization</a></li>
+            <% } %>
+            <% if (userConfigurations[3] ) {%>
+            <li id="queryingLi"><a href="./querying">Querying</a></li>
+            <% } %>
+            <% if (userConfigurations[4] ) {%>
+            <li id="evolutionLi"><a href="./evolution">Evolution</a></li>
+            <% } %>
+            <% if (userConfigurations[5]) {%>
+            <li><a href="./analytics">Analytics</a></li>
+            <% } %>
+            <li id="validationLi"><a href="./validation">Validation</a></li>
+            <!-- <li class="ui dropdown" style="padding-top: 1%">
+                <i class="dropdown icon"></i>
+                <div class="text">About</div>
+                <div class="menu">
+                  <div class="item" id="imprintLi"><a href="./Imprint">Imprint</a></div>
+                  <% if (userConfigurations[6]) {%>
+            <div class="item" id="dataProtectionLi"><a href="./dataProtection">Data Protection</a></div>
+            <% } %>
+        </div>
+      </li> -->
+
+            <!--Menu-->
+            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      About
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <a class="dropdown-item" href="./Imprint">Imprint</a>
+                      <% if (userConfigurations[6]) {%>
+                      <div class="dropdown-divider"></div>
+                      <a class="dropdown-item" href="./dataProtection">Data Protection</a>
                       <% } %>
-                        <% if (userConfigurations[3] ) {%>
-                          <li id="queryingLi"><a href="./querying">Querying</a></li>
-                          <% } %>
-                            <% if (userConfigurations[4] ) {%>
-                              <li id="evolutionLi"><a href="./evolution">Evolution</a></li>
-                              <% } %>
-                                <% if (userConfigurations[5]) {%>
-                                  <li><a href="./analytics">Analytics</a></li>
-                                  <% } %>
-                                    <li id="validationLi"><a href="./validation">Validation</a></li>
-                                    <li id="imprintLi"><a href="./Imprint">Imprint</a></li>
-                                    <% if (userConfigurations[6]) {%>
-                                      <li id="dataProtectionLi"><a href="./dataProtection">Data Protection</a></li>
-                                      <% } %>
+                    </div>
+                  </li>
           </ul>
           <ul id="rightNavbar" class="nav navbar-nav navbar-right">
+            <li>
+              <div class="field" style="padding-top: 15px;">
+                <select>
+                  <option value="">Branch</option>
+                  <option value="1">master</option>
+                  <option value="0">develop</option>
+                </select>
+              </div>
+            </li>
           </ul>
-        </div>
-        <!-- global replaceAll fuction to remove string from text of turtle code -->
-        <script>
-          String.prototype.replaceAll = function(search, replacement) {
-            var target = this;
-            return target.replace(new RegExp(search, 'g'), replacement);
-          };
-          $.ajax({
-            url: "./checkErrors",
-            type: "GET",
-            dataType: 'text',
-            data: 'isExistSyntaxError=value',
-            success: function(value) {
-              if (value == "true") {
-                for (i = 0; i < 3; i++) {
+          <!-- global replaceAll fuction to remove string from text of turtle code -->
+          <script>
+            // activate dropdown
+            // $('.ui.dropdown')
+            //   .dropdown();
+            // to replace in a string
+            String.prototype.replaceAll = function(search, replacement) {
+              var target = this;
+              return target.replace(new RegExp(search, 'g'), replacement);
+            };
+            $.ajax({
+              url: "./checkErrors",
+              type: "GET",
+              dataType: 'text',
+              data: 'isExistSyntaxError=value',
+              success: function(value) {
+                if (value == "true") {
+                  for (i = 0; i < 3; i++) {
+                    setTimeout(function() {
+                      $('#validationLi').transition('flash');
+                      $("#validationLi").css({
+                        "backgroundColor": "yellow"
+                      });
+                    }, 1000);
+                  }
                   setTimeout(function() {
-                    $('#validationLi').transition('flash');
                     $("#validationLi").css({
-                      "backgroundColor": "yellow"
+                      "backgroundColor": "red"
                     });
-                  }, 1000);
+                  }, 3000);
                 }
-                setTimeout(function() {
-                  $("#validationLi").css({
-                    "backgroundColor": "red"
-                  });
-                }, 3000);
-              }
-            },
-          });
-          var repoURL = <%- JSON.stringify(repositoryURL) %>;
-          if (repoURL) {
-            $('#rightNavbar').html("");
-            $("#rightNavbar").show();
-            $('#rightNavbar').append($('<li><a href="' + repoURL + '"><i class="alternate github icon"></i> Repository</a></li>'));
+              },
+            });
+            var repoURL = <%- JSON.stringify(repositoryURL) %>;
+            if (repoURL) {
+              //$('#rightNavbar').html("");
+              $("#rightNavbar").show();
+              $('#rightNavbar').append($('<li><a href="' + repoURL + '"><i class="alternate github icon"></i> Repository</a></li>'));
 
-          }
-        </script>
-      </div>
+            }
+          </script>
+        </div>
     </nav>
