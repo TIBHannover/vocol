@@ -150,7 +150,6 @@ function readUserConfigurationFile() {
 }
 readUserConfigurationFile();
 
-
 // check if the user has an error and this was for first time or
 // when user has changed to another repositoryURL
 // currentrepositoryURL === "" means it is the first time
@@ -160,7 +159,8 @@ if (fs.existsSync(repoFolderPath)) {
   currentrepositoryURL = shell.exec('git ls-remote --get-url', {
     silent: true
   }).stdout;
-  shell.cd('../vocol', {
+
+  shell.cd(__dirname, {
     silent: false
   }).stdout;
 }
@@ -233,7 +233,7 @@ app.get(['\/\/analytics', '/analytics'], function(req, res) {
     res.render('analytics', {
       title: 'Analytics'
     });
-})
+});
 
 app.get(['\/\/editor', '/editor'], function(req, res) {
   if (!req.session.isAuthenticated && req.app.locals.authRequired)
@@ -245,7 +245,7 @@ app.get(['\/\/editor', '/editor'], function(req, res) {
     res.render('editor', {
       title: 'Editing'
     });
-})
+});
 
 app.get(['\/\/visualization', '/visualization'], function(req, res) {
   if (!req.session.isAuthenticated && req.app.locals.authRequired)
@@ -257,7 +257,7 @@ app.get(['\/\/visualization', '/visualization'], function(req, res) {
     res.render('visualization', {
       title: 'Visualization'
     });
-})
+});
 
 app.get(['\/\/querying', '/querying'], function(req, res) {
   if (!req.session.isAuthenticated && req.app.locals.authRequired)

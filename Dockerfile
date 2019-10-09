@@ -31,7 +31,7 @@ CMD [ "npm", "start","8080","3030"]
 
 
 ###############################################################
-#### to build and run the Dockerfile performt he following:####
+#### to build and run the Dockerfile perform the following:####
 #SSH to the host
 #apt-get update
 #sudo apt-get install unzip

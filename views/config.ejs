@@ -314,7 +314,7 @@ Repository Type         </a>
             <div class="ui large right floated buttons">
               <button id="restBtn" class="ui reset button">Reset</button>
               <div class="or"></div>
-              <button id="submitBtn" type="submit" onclick="submitBtn_clickHandler(event);" class="ui blue submit button" value="Save Configurations">Save Configurations</button>
+              <button id="submitBtn" type="submit" onclick="submitBtn_clickHandler;" class="ui blue submit button" value="Save Configurations">Save Configurations</button>
             </div>
           </div>
           <div class="field">
@@ -467,6 +467,8 @@ Repository Type         </a>
     $('#text3').val($('#editor3').val());
   });
 
+
+  // wiens : todo > lets make this more readable and structure the input !
   var inputs = <%- JSON.stringify(inputComponentsValues) %>
   if (inputs) {
     $("#vocabularyName").val(inputs.vocabularyName);
@@ -569,9 +571,9 @@ Repository Type         </a>
 
   // do some security works
   function submitBtn_clickHandler(event) {
-    var ciphertext = CryptoJS.AES.encrypt(document.getElementById('password').value, document.getElementById('user').value);
-    document.getElementById('password').value = ciphertext;
-    document.getElementById('configForm').submit();
+      var ciphertext = CryptoJS.AES.encrypt(document.getElementById('password').value, document.getElementById('user').value);
+      document.getElementById('password').value = ciphertext;
+      document.getElementById('configForm').submit();
   }
 
 // to unescape html special characters
