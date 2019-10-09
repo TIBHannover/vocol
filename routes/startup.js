@@ -14,8 +14,15 @@ router.get('/', function(req, res) {
   }));
   // check if the userConfigurations file is exist
   // for the first time of app running
+  let currentWorkingDir=shell.exec('pwd', {
+    silent: false
+  }).stdout;
+  let vocolPath;
+
   var path = "jsonDataFiles/userConfigurations.json";
   fs.exists(path, function(exists) {
+    const lastIndex=currentWorkingDir.lastIndexOf("/"); // << TODO check for windows stuff: Better cwd - parent (but string stuff in js)
+    vocolPath=currentWorkingDir.slice(lastIndex+1,currentWorkingDir.length-1);
     if (exists) {
       jsonfile.readFile(path, function(err, obj) {
         if (err)
@@ -23,6 +30,10 @@ router.get('/', function(req, res) {
 
         // get out of the root of the vocol folder
         shell.cd('..');
+        let diffWorkingDir=shell.exec('pwd', {
+          silent: false
+        }).stdout;
+
 
         var clientHooks = (obj.hasOwnProperty('clientHooks')) ?
           true : false;
@@ -111,42 +122,43 @@ router.get('/', function(req, res) {
         if (currentrepositoryURL != obj.repositoryURL) {
           // reset the app. if the repositoryURL was changed
           shell.exec(
-            'echo "" > ../vocol/helper/tools/evolution/evolutionReport.txt'
+            'echo "" > ../'+vocolPath+'/helper/tools/evolution/evolutionReport.txt'
+          ).stdout;
+          console.log("Done");
+          shell.exec(
+            'echo "[]" > ../'+vocolPath+'/jsonDataFiles/syntaxErrors.json'
           ).stdout;
           shell.exec(
-            'echo "[]" > ../vocol/jsonDataFiles/syntaxErrors.json'
+            'echo "[]" > ../'+vocolPath+'/jsonDataFiles/RDFSConcepts.json'
           ).stdout;
           shell.exec(
-            'echo "[]" > ../vocol/jsonDataFiles/RDFSConcepts.json'
+            'echo "[]" > ../'+vocolPath+'/jsonDataFiles/SKOSConcepts.json'
           ).stdout;
           shell.exec(
-            'echo "[]" > ../vocol/jsonDataFiles/SKOSConcepts.json'
+            'echo "[]" > ../'+vocolPath+'/jsonDataFiles/SKOSObjects.json'
           ).stdout;
           shell.exec(
-            'echo "[]" > ../vocol/jsonDataFiles/SKOSObjects.json'
+            'echo "[]" > ../'+vocolPath+'/jsonDataFiles/RDFSObjects.json'
           ).stdout;
           shell.exec(
-            'echo "[]" > ../vocol/jsonDataFiles/RDFSObjects.json'
+            'echo "[]" > ../'+vocolPath+'/jsonDataFiles/OWLIndividuals.json'
           ).stdout;
           shell.exec(
-            'echo "[]" > ../vocol/jsonDataFiles/OWLIndividuals.json'
+            'rm -f ../'+vocolPath+'/helper/tools/serializations/SingleVoc.nt'
           ).stdout;
           shell.exec(
-            'rm -f ../vocol/helper/tools/serializations/SingleVoc.nt'
+            'rm -f ../'+vocolPath+'/helper/tools/ttl2ntConverter/temp.nt'
           ).stdout;
           shell.exec(
-            'rm -f ../vocol/helper/tools/ttl2ntConverter/temp.nt'
-          ).stdout;
-          shell.exec(
-            'rm -f ../vocol/helper/tools/evolution/SingleVoc.nt')
+            'rm -f ../'+vocolPath+'/helper/tools/evolution/SingleVoc.nt')
             .stdout;
           shell.exec(
-            'rm -f ../vocol/views/webvowl/data/SingleVoc.json').stdout;
+            'rm -f ../'+vocolPath+'/views/webvowl/data/SingleVoc.json').stdout;
           console.log("App's previous data was deleted");
         }
         // everytime remove all pervious errors if some were saved
         shell.exec(
-          'echo "[]" > ../vocol/jsonDataFiles/syntaxErrors.json')
+          'echo "[]" > ../'+vocolPath+'/jsonDataFiles/syntaxErrors.json')
           .stdout;
 
         var pass = true;
@@ -154,24 +166,24 @@ router.get('/', function(req, res) {
         var k = 1;
         var errors = [];
         // delete oldData if something is there
-        shell.mkdir('../vocol/helper/tools/serializations');
+        shell.mkdir('../'+vocolPath+'/helper/tools/serializations');
         shell.exec(
-          'rm -f   ../vocol/helper/tools/serializations/SingleVoc.nt', {
+          'rm -f   ../'+vocolPath+'/helper/tools/serializations/SingleVoc.nt', {
             silent: false
           }).stdout;
         shell.exec(
-          'rm -f   ../vocol/helper/tools/ttl2ntConverter/Output.report', {
+          'rm -f   ../'+vocolPath+'/helper/tools/ttl2ntConverter/Output.report', {
             silent: false
           }).stdout;
         shell.exec(
-          'rm -f   ../vocol/helper/tools/RDFDoctor/*.error', {
+          'rm -f   ../'+vocolPath+'/helper/tools/RDFDoctor/*.error', {
             silent: false
           }).stdout;
         shell.exec(
-          'rm -f   ../vocol/helper/tools/RDFDoctor/*.output', {
+          'rm -f   ../'+vocolPath+'/helper/tools/RDFDoctor/*.output', {
             silent: false
           }).stdout;
-        shell.cd('../vocol/helper/tools/ttl2ntConverter/').stdout;
+        shell.cd('../'+vocolPath+'/helper/tools/ttl2ntConverter/').stdout;
         // converting file from turtle to ntriples format
         var disableConsistenyChecking = true;
         if (obj.hasOwnProperty("consistenyChecking")) {
@@ -264,7 +276,7 @@ router.get('/', function(req, res) {
             silent: false
           }).stdout;
           // filePath where we read from
-          var filePath = '../vocol/views/editor/js/turtle-editor.js';
+          var filePath = '../'+vocolPath+'/views/editor/js/turtle-editor.js';
           // read contents of the file with the filePathgetTree
           var contents = fs.readFileSync(filePath, 'utf8');
           contents = contents.replace(/(owner\.val\(")(.*?)"/mg,
@@ -282,7 +294,7 @@ router.get('/', function(req, res) {
         if (!pass) {
           if (errors) {
             // display syntax errors
-            shell.cd('../vocol/jsonDataFiles/').stdout;
+            shell.cd('../'+vocolPath+'/jsonDataFiles/').stdout;
             var pathErrorFile = shell.exec('pwd').stdout;
             shell.cd('../.').stdout;
             var filePath = pathErrorFile.trim() + '/' +
@@ -304,27 +316,27 @@ router.get('/', function(req, res) {
         else {
           // delete previous data if there is any
           shell.exec(
-            'rm -f ../vocol/views/webvowl/data/SingleVoc.json').stdout;
+            'rm -f ../'+vocolPath+'/views/webvowl/data/SingleVoc.json').stdout;
           shell.exec(
-            'echo "[]" > ../vocol/jsonDataFiles/RDFSConcepts.json'
+            'echo "[]" > ../'+vocolPath+'/jsonDataFiles/RDFSConcepts.json'
           ).stdout;
           shell.exec(
-            'echo "[]" > ../vocol/jsonDataFiles/SKOSConcepts.json'
+            'echo "[]" > ../'+vocolPath+'/jsonDataFiles/SKOSConcepts.json'
           ).stdout;
           shell.exec(
-            'echo "[]" >../vocol/jsonDataFiles/SKOSObjects.json')
+            'echo "[]" >../'+vocolPath+'/jsonDataFiles/SKOSObjects.json')
             .stdout;
           shell.exec(
-            'echo "[]" > ../vocol/jsonDataFiles/RDFSObjects.json'
+            'echo "[]" > ../'+vocolPath+'/jsonDataFiles/RDFSObjects.json'
           ).stdout;
           shell.exec(
-            'echo "[]" > ../vocol/jsonDataFiles/OWLIndividuals.json'
+            'echo "[]" > ../'+vocolPath+'/jsonDataFiles/OWLIndividuals.json'
           ).stdout;
           shell.exec(
-            'rm -f ../vocol/helper/tools/ttl2ntConverter/temp.nt'
+            'rm -f ../'+vocolPath+'/helper/tools/ttl2ntConverter/temp.nt'
           ).stdout;
           // Kill fuseki if it is running
-          shell.cd('-P', '../vocol/helper/tools/apache-jena-fuseki');
+          shell.cd('-P', '../'+vocolPath+'/helper/tools/apache-jena-fuseki');
           shell.exec('fuser -k ' + process.argv.slice(2)[1] || 3030 +
             '/tcp', {
               silent: false
@@ -458,7 +470,7 @@ router.get('/', function(req, res) {
             shell.cd('../../../../repoFolder');
             shell.mkdir('VoColClient');
             shell.cp('-r',
-              '../vocol/helper/tools/VoColClient/Hooks',
+              '../'+vocolPath+'/helper/tools/VoColClient/Hooks',
               'VoColClient');
             shell.cd('-P', 'VoColClient/Hooks');
             shell.exec("pwd");
@@ -484,7 +496,7 @@ router.get('/', function(req, res) {
                 silent: false
               }).stdout;
             shell.exec('pwd').stdout;
-            shell.cd('../vocol/helper/tools/VoColClient/'); //VoColClient
+            shell.cd('../'+vocolPath+'/helper/tools/VoColClient/'); //VoColClient
 
           }
           // run external bash script to start up both fuseki-server and vocol
@@ -499,7 +511,7 @@ router.get('/', function(req, res) {
       /*else // if it has syntaxErrors
       {
         shell.exec('pwd');
-        shell.cd('../vocol/').stdout;
+        shell.cd('../'+vocolPath+'/').stdout;
         res.redirect('./validation');
       }*/
       });
