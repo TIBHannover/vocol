@@ -1,34 +1,46 @@
-FROM ubuntu:18.04
+FROM openjdk:8u212-stretch
 
-MAINTAINER  Fraunhofer IAIS , https://vocol.iais.fraunhofer.de
+MAINTAINER  TIB/L3S Joint Lab , https://tib.edu
 
 RUN apt-get update \
- && apt-get -y install nodejs npm git \
+ && apt-get upgrade -y \
+ && apt-get install -y  software-properties-common \
+ && add-apt-repository  "deb http://deb.debian.org/debian stretch-backports main contrib non-free" -y \
+ && apt-get update \
+ && apt-get -y -t stretch-backports install git nodejs npm \
+ && apt-get clean \
+ && npm i npm@latest -g \
  && apt-get clean
 
 
-# Install JAVA 8
-RUN apt-get update && \
-    apt-get upgrade -y && \
-    apt-get install -y  software-properties-common && \
-    add-apt-repository ppa:webupd8team/java -y && \
-    apt-get update && \
-    echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections && \
-    apt-get install -y oracle-java8-installer && \
-    apt-get clean
-
-
-
 # Build application
-RUN mkdir /home/project
-WORKDIR /home/project
-RUN git clone  https://github.com/vocol/vocol.git \
-&&  chmod u+x  .
-WORKDIR /home/project/vocol
+RUN mkdir -p /home/tib/
+WORKDIR /home/tib/
+# Copy the vocol files from the local repo to have all the changes
+COPY . vocol
+RUN  chmod u+x  .
+WORKDIR /home/tib/vocol
+
 RUN npm install
 
-EXPOSE 3000
+EXPOSE 8080
 EXPOSE 3030
 
-ENV PORT=3000
-CMD [ "npm", "start","3000","3030"]
+ENV PORT=8080
+CMD [ "npm", "start","8080","3030"]
+
+
+###############################################################
+#### to build and run the Dockerfile performt he following:####
+#SSH to the host
+#apt-get update
+#sudo apt-get install unzip
+#sudo apt-get install docker
+
+#mkdir tibhannover
+#cd tibhannover
+#git clone https://github.com/tibhannover/vocol.git
+#cd /vocol
+#docker build -t tib/vocol .
+#docker run --name <ontology name>OntoVocol --restart=always -d -p <ontology port>|8080:3030 tib/vocol 
+################################################################
