@@ -656,9 +656,9 @@ public class test {
 				outFileMessage = "Successfully Copied allSKOSObjectJSON Object to File...";
 			}
 
-			else if (type == "OWLIndividiual") {
-				filePath = outputFolderPath + "OWLIndividiuals.json";
-				outFileMessage = "Successfully Copied OWLIndividiualsJSON Object to File...";
+			else if (type == "OWLIndividual") {
+				filePath = outputFolderPath + "OWLIndividuals.json";
+				outFileMessage = "Successfully Copied OWLIndividualsJSON Object to File...";
 
 			} else if (type == "RDFS") {
 				filePath = outputFolderPath + "RDFSObjects.json";

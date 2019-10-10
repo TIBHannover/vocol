@@ -22,7 +22,7 @@ router.get('/', function(req, res) {
         var SKOSData = require('../jsonDataFiles/SKOSConcepts.json');
         var RDFObjectsPlusURI = require('../jsonDataFiles/RDFSObjects.json');
         var SKOSObjectsPlusURI = require('../jsonDataFiles/SKOSObjects.json');
-        var OWLIndividuals = require('../jsonDataFiles/OWLIndividiuals.json');
+        var OWLIndividuals = require('../jsonDataFiles/OWLIndividuals.json');
 
         var treeData = [];
 

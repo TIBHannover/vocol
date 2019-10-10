@@ -10,7 +10,7 @@ echo "[]" > jsonDataFiles/RDFSConcepts.json
 echo "[]" > jsonDataFiles/SKOSConcepts.json
 echo "[]" > jsonDataFiles/SKOSObjects.json
 echo "[]" > jsonDataFiles/RDFSObjects.json
-echo "[]" > jsonDataFiles/OWLIndividiuals.json
+echo "[]" > jsonDataFiles/OWLIndividuals.json
 rm -f helper/tools/serializations/SingleVoc.nt
 rm -f helper/tools/evolution/SingleVoc.nt
 rm -f helper/tools/ttl2ntConverter/Output.report

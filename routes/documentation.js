@@ -67,7 +67,7 @@ router.get('/', function(req, res) {
         var SKOSObjectsPlusURI = require(
           '../jsonDataFiles/SKOSObjects.json');
         var OWLIndividuals = require(
-          '../jsonDataFiles/OWLIndividiuals.json');
+          '../jsonDataFiles/OWLIndividuals.json');
 
 
         var treeData = [];
