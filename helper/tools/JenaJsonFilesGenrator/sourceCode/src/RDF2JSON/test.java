@@ -88,12 +88,14 @@ public class test {
 			mergedJsonObjectallSKOSObjecs.put("files", mergingAllSKOSObjecs);
 			mergedJsonOWLNamedIndividuals.put("files", mergingJsonOWLNamedIndividuals);
 
+			System.out.println("<<< Organizing >>>");
 			// call to organize
 			SKOSFileDecode(mergedJsonObjectSKOS);
 			RDFSFileDecode(mergedJsonObjectClasses);
 			objectsFileDecode(mergedJsonObjectallRDFObjecs, "RDFS");
 			objectsFileDecode(mergedJsonObjectallSKOSObjecs, "SKOS");
-			objectsFileDecode(mergedJsonOWLNamedIndividuals, "OWLIndividiual");
+			objectsFileDecode(mergedJsonOWLNamedIndividuals, "OWLIndividual");
+			System.out.println("<<< Done >>>");
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		} finally {
@@ -647,7 +649,6 @@ public class test {
 	}
 
 	public static void objectsFileDecode(JSONObject obj, String type) {
-
 		try {
 			String filePath = null;
 			String outFileMessage = null;
