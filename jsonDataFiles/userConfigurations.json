@@ -1,1 +1,25 @@
-{}
+{
+  "vocabularyName": "STO",
+  "server": "localhost:3000",
+  "adminUserName": "admin",
+  "adminPass": "$2b$10$YEBY.Mwa4ldiya1z7ui82OxHQiJCpDn2e5WUL6J3WwJA9NqWofthC",
+  "repositoryURL": "https://github.com/i40-Tools/I40KG",
+  "repositoryOwner": "i40-Tools",
+  "repositoryName": "I40KG",
+  "branchName": "master",
+  "user": "admin",
+  "password": "123456",
+  "repositoryService": "gitHub",
+  "repositoryType": "public",
+  "visualization": "true",
+  "sparqlEndPoint": "true",
+  "documentationGeneration": "true",
+  "evolutionReport": "true",
+  "analytics": "true",
+  "infomationProtectionAgreement": "true",
+  "loginUserName": "",
+  "loginPassword": "$2b$10$YEBY.Mwa4ldiya1z7ui82OfqDCF3B/Lfg1SqIAAX6.KfMe4Bm9Y9e",
+  "text": "",
+  "text2": "<p>asd</p>\r\n",
+  "text3": "            asd"
+}

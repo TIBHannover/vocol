@@ -1,4 +1,5 @@
 node_modules/
 views/Imprint.ejs
-views/dataProtection.ejs
-views/dataProtectionScript.ejs
+# >> fixing the views error << Why are these files in the ignore list anyway? 
+#views/dataProtection.ejs
+#views/dataProtectionScript.ejs
