@@ -108,17 +108,17 @@ function readUserConfigurationFile() {
           } else if (k === "analytics") { //menu[5]
             menu[5] = true;
           } else if (k === "infomationProtectionAgreement") {
-            if (obj['text2'] != "") {
-              var dataProtectionHtmlPage = '<% include header.ejs %><div style="margin-top: 3% !important;"></div><div class="ui grid"><div class="ui container">'
+            if (obj['text2'] !== "") {
+              var dataProtectionHtmlPage = '<% include header %><div style="margin-top: 3% !important;"></div><div class="ui grid"><div class="ui container">';
               dataProtectionHtmlPage += obj['text2'];
-              dataProtectionHtmlPage += '</div></div><% include footer .ejs%>';
+              dataProtectionHtmlPage += '</div></div><% include footer %>';
               fs.writeFileSync(__dirname + '/views/dataProtection.ejs',
                 dataProtectionHtmlPage, {
                   encoding: 'utf8',
                   flag: 'w'
                 });
             }
-            if (obj['text3'] != "") {
+            if (obj['text3'] !== "") {
               fs.writeFileSync(__dirname +
                 '/views/dataProtectionScript.ejs', obj['text3'], {
                   encoding: 'utf8',
@@ -134,16 +134,12 @@ function readUserConfigurationFile() {
         });
         app.locals.userConfigurations = menu;
         app.locals.repoParam = repoParam;
-        // check if the admin select private mode access of instace
-        if (loginUserName)
-          app.locals.authRequired = true;
-        else
-          app.locals.authRequired = false;
+        // check if the admin select private mode access of instance
+        if (loginUserName) app.locals.authRequired = true;
+        else               app.locals.authRequired = false;
         // save local variable about existing of admin account
-        if (adminAccount)
-          app.locals.isExistAdminAccount = true;
-        else
-          app.locals.isExistAdminAccount = false;
+        if (adminAccount) app.locals.isExistAdminAccount = true;
+        else              app.locals.isExistAdminAccount = false;
       });
     }
   }
@@ -176,7 +172,7 @@ app.use(session({
 }));
 
 
-// redirect to /config for first time if userConfigurations.json does not exsit
+// redirect to /config for first time if userConfigurations.json does not exist
 app.get('*', function(req, res, next) {
   var userConfigurationsFile2 = __dirname +
     '/jsonDataFiles/userConfigurations.json';
@@ -317,7 +313,7 @@ app.use(['//*', '*'], referenceRoutes);
 watch(ErrorsFilePath, {
   recursive: true
 }, function(evt, name) {
-  if (evt == 'update') {
+  if (evt === 'update') {
     // call if SyntaxErrors file was changed
     readSyntaxErrorsFile();
   }
@@ -327,7 +323,7 @@ watch(ErrorsFilePath, {
 watch(userConfigurationsFile, {
   recursive: true
 }, function(evt, name) {
-  if (evt == 'update') {
+  if (evt === 'update') {
     // call if userConfigurations file was changed
     readUserConfigurationFile();
   }

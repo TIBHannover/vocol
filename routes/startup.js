@@ -445,7 +445,7 @@ router.get('/', function(req, res) {
               silent: false
             }).stdout;
             if (obj.text2) {
-              var dataProtectionHtmlPage = '<% include header %><div style="margin-top: 3% !important;"></div><div class="ui grid"><div class="ui container">'
+              var dataProtectionHtmlPage = '<% include header %><div style="margin-top: 3% !important;"></div><div class="ui grid"><div class="ui container">';
               dataProtectionHtmlPage += obj.text2;
               dataProtectionHtmlPage += '</div></div><% include footer %>';
               fs.writeFileSync("views/dataProtection.ejs",
