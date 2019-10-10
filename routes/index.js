@@ -147,7 +147,6 @@ router.get('/', function(req, res) {
 
                     // adding fallback if no description was provided during initialization
                     if (!obj.text){
-                      console.log(obj);
                       obj.text = "<h1> No summary provided during initialization. </h1>";
                       obj.text += "<p> <i>Hint:</i> </p>";
                       obj.text += "<p> Add <b>Homepage Description</b> on the <a href=/config>Configuration Page</a>. </p>";
