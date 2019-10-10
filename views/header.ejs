@@ -53,31 +53,16 @@
         <div id="navbar" class="navbar-collapse collapse in" aria-expanded="true" style="">
           <ul id="leftHeaderUl" class="nav navbar-nav">
 
-            <li id="homeLi"><a href="./">Home</a></li>
-
-            <% if (userConfigurations[0] ) {%>
-              <li id="editingLi"><a href="./editor">Editing</a></li>
-              <% } %>
-                <% if ( userConfigurations[1] ) {%>
-                  <li id="documentationLi"><a href="./documentation">Documentation</a></li>
-                  <% } %>
-                    <% if (userConfigurations[2]){ %>
-                      <li id="visualizationLi"><a href="./visualization">Visualization</a></li>
-                      <% } %>
-                        <% if (userConfigurations[3] ) {%>
-                          <li id="queryingLi"><a href="./querying">Querying</a></li>
-                          <% } %>
-                            <% if (userConfigurations[4] ) {%>
-                              <li id="evolutionLi"><a href="./evolution">Evolution</a></li>
-                              <% } %>
-                                <% if (userConfigurations[5]) {%>
-                                  <li><a href="./analytics">Analytics</a></li>
-                                  <% } %>
-                                    <li id="validationLi"><a href="./validation">Validation</a></li>
-                                    <li id="imprintLi"><a href="./Imprint">Imprint</a></li>
-                                    <% if (userConfigurations[6]) {%>
-                                      <li id="dataProtectionLi"><a href="./dataProtection">Data Protection</a></li>
-                                      <% } %>
+                                                <li id="homeLi">           <a href="./">               Home</a></li>
+            <% if ( userConfigurations[0] ) {%> <li id="editingLi">        <a href="./editor">         Editing</a></li><% } %>
+            <% if ( userConfigurations[1] ) {%> <li id="documentationLi">  <a href="./documentation">  Documentation</a></li><% } %>
+            <% if ( userConfigurations[2] ) {%> <li id="visualizationLi">  <a href="./visualization">  Visualization</a></li><% } %>
+            <% if ( userConfigurations[3] ) {%> <li id="queryingLi">       <a href="./querying">       Querying</a></li><% } %>
+            <% if ( userConfigurations[4] ) {%> <li id="evolutionLi">      <a href="./evolution">      Evolution</a></li><% } %>
+            <% if ( userConfigurations[5] ) {%> <li>                       <a href="./analytics">      Analytics</a></li><% } %>
+                                                <li id="validationLi">     <a href="./validation">     Validation</a></li>
+                                                <li id="imprintLi">        <a href="./Imprint">        Imprint</a></li>
+            <% if ( userConfigurations[6] ) {%> <li id="dataProtectionLi"> <a href="./dataProtection"> Data Protection</a></li> <% } %>
           </ul>
           <ul id="rightNavbar" class="nav navbar-nav navbar-right">
           </ul>
