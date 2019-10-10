@@ -22,7 +22,7 @@ router.get('/', function(req, res) {
         console.log("errors:" + errors);
       }
     }
-    previousValidOntologyFilePath = 'jsonDataFiles/RDFSConcepts.json'
+    var previousValidOntologyFilePath = 'jsonDataFiles/RDFSConcepts.json';
     if (fs.existsSync(previousValidOntologyFilePath)) {
       hasPreviousValidOntology = true;
     }

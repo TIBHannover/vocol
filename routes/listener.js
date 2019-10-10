@@ -10,6 +10,9 @@ var http = require('http');
 var path = require('path');
 var spawn = require('child_process').spawn;
 
+// TODO: fix variable double declaration for 'data'
+// fix pass , is it a var or is it a function oO
+// looks very duplicated code form forceStartup oO
 router.post('/', function(req, res) {
   var path = "jsonDataFiles/userConfigurations.json";
   fs.exists(path, function(exists) {
@@ -68,7 +71,7 @@ router.post('/', function(req, res) {
               commitTimeInMilliseconds + " " + commitTimestamp);
           }
 
-          if (branchName == branchNameParam && repositoryNameParam ===
+          if (branchName === branchNameParam && repositoryNameParam ===
             repositoryName && !commitMessage.includes("merge")) {
             console.log('contains');
 
@@ -157,11 +160,11 @@ router.post('/', function(req, res) {
                     date: commitTimestamp.split("T")[0] | new Date()
                         .toISOString().slice(0, 10)
                   };
-                  errors.push(errorObject)
+                  errors.push(errorObject);
                   k++;
                 }
               }
-            }
+            };
             pass();
             shell.cd('../RDFDoctor/').stdout;
             var fileData = shell.exec(

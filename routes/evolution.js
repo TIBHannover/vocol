@@ -59,7 +59,7 @@ router.get('/', function(req, res) {
             history.push(commitObject);
             k++;
           }
-          if (arrayLines[i].charAt(0) == '+') {
+          if (arrayLines[i].charAt(0) === '+') {
             element = arrayLines[i].substr(2);
             if (arrayLines[i].includes("_:file:")) {
               element = element.split("_:file:")[0];
@@ -71,7 +71,7 @@ router.get('/', function(req, res) {
               'pusher':pusher,
               'commitTimestamp': commitTimestamp
             });
-          } else if (arrayLines[i].charAt(0) == '-') {
+          } else if (arrayLines[i].charAt(0) === '-') {
             element = arrayLines[i].substr(2);
             if (arrayLines[i].includes("_:file:")) {
               element = element.split("_:file:")[0];

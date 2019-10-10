@@ -7,6 +7,10 @@ var shell = require('shelljs');
 var router = express.Router();
 var spawn = require('child_process').spawn;
 
+//Todo list
+// fix the vocol path (see startup.js)
+// fix multiple declaration of for loop couter variables
+
 shell.exec('echo "{}" > ../vocol/jsonDataFiles/syntaxErrors.json').stdout;
 
 // check if the userConfigurations file is exist
@@ -44,8 +48,7 @@ fs.exists(path, function(exists) {
       // converting file from turtle to ntriples format
       var disableConsistenyChecking = true;
       if (obj.hasOwnProperty("consistenyChecking")) {
-        disableConsistenyChecking = (obj.consistenyChecking == "true") ?
-          true : false;
+        disableConsistenyChecking = (obj.consistenyChecking === "true");
       }
 
       shell.exec(
@@ -59,7 +62,7 @@ fs.exists(path, function(exists) {
         var jsonContent = JSON.parse(outputReport);
         for (var i = 0, l = jsonContent.length; i < l; i++) {
           var errorType = "";
-          if (jsonContent[i].source == "JenaRiot") {
+          if (jsonContent[i].source === "JenaRiot") {
             pass = false;
             errorType = "Syntax";
           } else {
@@ -74,10 +77,11 @@ fs.exists(path, function(exists) {
             pusher: "",
             date: new Date().toISOString().slice(0, 10)
           };
-          errors.push(errorObject)
+          errors.push(errorObject);
           k++;
         }
-      }
+      };
+
       pass();
       shell.cd('../RDFDoctor/').stdout;
       var fileData = shell.exec(
@@ -114,7 +118,7 @@ fs.exists(path, function(exists) {
             pusher: "",
             date: new Date().toISOString().slice(0, 10)
           };
-          errors.push(errorObject)
+          errors.push(errorObject);
           k++;
         }
       }
@@ -196,13 +200,13 @@ fs.exists(path, function(exists) {
         var addedQueriesContents = "";
 
         // loop for all the files with the extension of ".rq"
-        for (key in files) {
+        for (var key in files) {
           var fileName = files[key].substring(2).split(".rq")[0];
           if (fileName.includes('/')) {
             var slachLocation = fileName.lastIndexOf('/');
             fileName = fileName.substring(slachLocation + 1, fileName.length);
           }
-          if (queryNames.indexOf(fileName) == -1) {
+          if (queryNames.indexOf(fileName) === -1) {
             var currentQueryFileContent = fs.readFileSync(files[key],
               'utf8');
             addedQueriesContents += ', { "name":"' + fileName + '",\n';

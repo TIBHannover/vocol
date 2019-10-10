@@ -8,6 +8,9 @@ var router = express.Router();
 var spawn = require('child_process').spawn;
 var path = require('path');
 
+
+//todo : fix the multiple variable declaration
+
 router.get('/', function(req, res) {
   app.use(bodyParser.urlencoded({
     extended: true
@@ -235,7 +238,8 @@ router.get('/', function(req, res) {
         // result of searched file of .ttl
         var filesnamesArray = fileData.split(/[\n]/);
         filesnamesArray.pop();
-        for (var i = 0; i < filesnamesArray.length - 1; i++) {
+        var i;
+        for (i = 0; i < filesnamesArray.length - 1; i++) {
           shell.exec(
             'java -jar RDFDoctor.jar -j -i ' + filesnamesArray[i], {
               silent: false
@@ -248,7 +252,7 @@ router.get('/', function(req, res) {
         var errorFilesnamesArray = errorFileData.split(/[\n]/);
         errorFilesnamesArray.pop();
 
-        for (var i = 0; i < errorFilesnamesArray.length; i++) {
+        for (i = 0; i < errorFilesnamesArray.length; i++) {
           var errReport = fs.readFileSync(errorFilesnamesArray[i]);
           var errJSONContent = JSON.parse(errReport);
           for (var j = 0, l = errJSONContent.length; j < l; j++) {
@@ -263,7 +267,7 @@ router.get('/', function(req, res) {
               pusher: "",
               date: new Date().toISOString().slice(0, 10)
             };
-            errors.push(errorObject)
+            errors.push(errorObject);
             k++;
           }
         }
@@ -432,7 +436,7 @@ router.get('/', function(req, res) {
           }
 
           // Update the dataProtection policy and script if infomationProtectionAgreement was selected
-          if (obj.dataProtectionAgreement == "true") {
+          if (obj.dataProtectionAgreement === "true") {
             shell.exec('pwd', {
               silent: false
             }).stdout;
@@ -476,7 +480,7 @@ router.get('/', function(req, res) {
             shell.exec("pwd");
             // replace the  server URL in the client Hooks
             var serverURL = obj.server;
-            if (serverURL.charAt(serverURL.length - 1) == '/') {
+            if (serverURL.charAt(serverURL.length - 1) === '/') {
               serverURL = serverURL.substr(0, serverURL.length - 1);
             }
             var precommitFile = './pre-commit';

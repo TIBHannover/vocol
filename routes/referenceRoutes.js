@@ -4,6 +4,8 @@ var router = express.Router();
 var fs = require('fs');
 var request = require('request');
 
+// Todo: fix multiple var declaration
+
 router.get('/', function(req, res) {
   if (!req.session.isAuthenticated && req.app.locals.authRequired)
     res.render('login', {
@@ -12,10 +14,10 @@ router.get('/', function(req, res) {
   else {
     var searchedConcept = req.originalUrl;
     searchedConcept = searchedConcept.substr(1);
-    if (searchedConcept.charAt(0) == '/')
+    if (searchedConcept.charAt(0) === '/')
       searchedConcept = searchedConcept.split('/')[1];
     console.log(req.headers);
-    var filePath = 'jsonDataFiles/RDFSConcepts.json'
+    var filePath = 'jsonDataFiles/RDFSConcepts.json';
     fs.exists(filePath, function(exists) {
       if (exists) {
         var RDFSdata = require('../jsonDataFiles/RDFSConcepts.json');
@@ -27,7 +29,7 @@ router.get('/', function(req, res) {
         var treeData = [];
 
         function SortConcepts(x, y) {
-          return ((x.concept.toLowerCase() == y.concept.toLowerCase()) ? 0 : ((x.concept.toLowerCase() > y.concept.toLowerCase()) ? 1 : -1));
+          return ((x.concept.toLowerCase() === y.concept.toLowerCase()) ? 0 : ((x.concept.toLowerCase() > y.concept.toLowerCase()) ? 1 : -1));
         }
 
 
@@ -77,7 +79,7 @@ router.get('/', function(req, res) {
         // translation of concept to URI
         function findURI(array, item) {
           var i = 0;
-          while (array[i].concept != item) {
+          while (array[i].concept !== item) {
             i++;
           }
           return array[i].URI;
@@ -120,7 +122,7 @@ router.get('/', function(req, res) {
           // if the term URI is found that means that we have some info to send to the requester
           if (searchConceptURI) {
             var queryObject = 'CONSTRUCT{<' + encodeURIComponent(searchConceptURI) + '> ?p ?o .}WHERE {<' + encodeURIComponent(searchConceptURI) + '> ?p ?o .}';
-            var endpoint = "http:\/\/localhost:"+process.argv.slice(2)[1] || 3030+"/dataset/sparql?query="
+            var endpoint = "http:\/\/localhost:"+process.argv.slice(2)[1] || 3030+"/dataset/sparql?query=";
             request({
               url: endpoint + queryObject,
               headers: {'accept': acceptHeader},
