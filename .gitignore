@@ -3,3 +3,8 @@ views/Imprint.ejs
 # >> fixing the views error << Why are these files in the ignore list anyway? 
 #views/dataProtection.ejs
 #views/dataProtectionScript.ejs
+
+# IntelliJ  files
+*.iml
+.idea/
+

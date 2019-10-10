@@ -102,7 +102,7 @@ router.get('/', function(req, res) {
             if (data) {
               // string to hold table content
               statistics = "";
-              for (key in data['results']['bindings'][0]) {
+              for (var key in data['results']['bindings'][0]) {
                 var obj = data['results']['bindings'][0][key][
                   'value'
                 ];
@@ -145,6 +145,13 @@ router.get('/', function(req, res) {
                     repoInfo += '<tr><td class="td_content"> Repository Branch </td><td class="right aligned">' +
                       obj.branchName + '</td></tr>';
 
+                    // adding fallback if no description was provided during initialization
+                    if (!obj.text){
+                      console.log(obj);
+                      obj.text = "<h1> No summary provided during initialization. </h1>";
+                      obj.text += "<p> <i>Hint:</i> </p>";
+                      obj.text += "<p> Add <b>Homepage Description</b> on the <a href=/config>Configuration Page</a>. </p>";
+                    }
                     res.render('index', {
                       title: 'Home',
                       metaData: metaData,
@@ -162,6 +169,7 @@ router.get('/', function(req, res) {
         });
 
       } else {
+        // This is executed when fuseki is not yet initialized
         // check if the userConfigurations file is exist
         // for the first time of app running
         var path = "jsonDataFiles/userConfigurations.json";
@@ -177,7 +185,10 @@ router.get('/', function(req, res) {
                   metaData: "",
                   statistics: "",
                   repoInfo: "",
-                  homePage: obj.text
+                  // homePage: obj.text
+                  homePage: "<h1>Please <b>reload</b> the homepage to fully initialize the meta data and statistics. </h1>"
+
+
                 });
             });
           }
