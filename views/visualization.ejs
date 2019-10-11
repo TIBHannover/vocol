@@ -1,3 +1,35 @@
 <% include header %>
-    <iframe src="./webvowlLink/" frameborder="0" style="height:93%; width:100% ; right: 0px; position: fixed ;left: 0px; bottom: 0px padding-top:50px"></iframe>
-  <% include footer %>
+
+<iframe id="webvowlFrame"
+        src="./webvowlLink/"
+        frameborder="0"
+        style="height:93%; width:100%; right:0; position:fixed; left:0; top:50px;">
+</iframe>
+
+<script>
+  // function for eventListener on resize events;
+  function connection(){
+    window.addEventListener('resize',recomputeHeight );
+  }
+  function disconnect(){
+    // window.onclose=cleanup;
+    window.onunload=cleanup;
+  }
+    function cleanup(){
+      // adding the logs inorder to have a visual indication in the console when closing page is performed.
+      console.log("Removing the event listener for resize events!");
+      window.removeEventListener('resize',recomputeHeight );
+      console.log("Done");
+    }
+  // function for recomputing height;
+  function recomputeHeight(){
+    let wvHeight=window.innerHeight-50;
+    document.getElementById( 'webvowlFrame' ).style.height=wvHeight+"px";
+  }
+  // execute initial resize and connect it to the event
+  recomputeHeight();
+  connection();
+  disconnect();
+</script>
+
+<% include footer %>
