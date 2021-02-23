@@ -487,16 +487,22 @@ Repository Type         </a>
     $("#user").val(inputs.user);
     $("#password").val(inputs.password);
     // set Editor text
-    if (inputs.text);
-    CKEDITOR.instances.editor.setData(inputs.text)
+    if (inputs.text){
+      CKEDITOR.instances.editor.setData(inputs.text)
+      $("#text").val(inputs.text);
+    }
 
     // set Editor text2
-    if (inputs.text2)
+    if (inputs.text2) {
       CKEDITOR.instances.editor2.setData(inputs.text2)
+      $("#text2").val(inputs.text2);
+    }
 
     // set Editor text3
     if (inputs.text3){
       $('#editor3').val(decodeHtml(inputs.text3));
+      $('#text3').val(decodeHtml(inputs.text3));
+
     }
 
     if (inputs.infomationProtectionAgreement)

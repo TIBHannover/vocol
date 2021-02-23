@@ -71,8 +71,9 @@ router.post('/', function(req, res) {
               commitTimeInMilliseconds + " " + commitTimestamp);
           }
 
-          if (branchName === branchNameParam && repositoryNameParam ===
-            repositoryName && !commitMessage.includes("merge")) {
+          if (branchName === branchNameParam && repositoryNameParam === repositoryName
+            // && !commitMessage.includes("merge")
+          ) {
             console.log('contains');
 
             commitMessage = commitMessage.replace(/\n/g, '');
