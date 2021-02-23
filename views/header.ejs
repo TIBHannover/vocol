@@ -58,7 +58,8 @@
             <% if ( userConfigurations[1] ) {%> <li id="documentationLi">  <a href="./documentation">  Documentation</a></li><% } %>
             <% if ( userConfigurations[2] ) {%> <li id="visualizationLi">  <a href="./visualization">  Visualization</a></li><% } %>
             <% if ( userConfigurations[3] ) {%> <li id="queryingLi">       <a href="./querying">       Querying</a></li><% } %>
-            <% if ( userConfigurations[4] ) {%> <li id="evolutionLi">      <a href="./evolution">      Evolution</a></li><% } %>
+<!--              HACK IT AWAY, we dont show the evolution button (the false flag is resposible, event if config says it wants to have eval we do not display !)-->
+            <% if ( userConfigurations[4] && false ) {%> <li id="evolutionLi">      <a href="./evolution">      Evolution</a></li><% } %>
             <% if ( userConfigurations[5] ) {%> <li>                       <a href="./analytics">      Analytics</a></li><% } %>
                                                 <li id="validationLi">     <a href="./validation">     Validation</a></li>
                                                 <li id="imprintLi">        <a href="./Imprint">        Imprint</a></li>
@@ -106,4 +107,4 @@
         </script>
       </div>
     </nav>
-
+  </div>
